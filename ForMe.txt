@@ -1,0 +1,3 @@
+.\venv\Scripts\Activate.ps1
+
+cba247bb-2d11-4bd9-9868-405d8ec4eb3f
