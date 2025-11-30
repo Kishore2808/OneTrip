@@ -1,3 +1,5 @@
-.\venv\Scripts\Activate.ps1
+ACTIVATE V ENV (WINDOWS):  .\venv\Scripts\Activate.ps1
 
-cba247bb-2d11-4bd9-9868-405d8ec4eb3f
+ACTIVATE V ENV (MAC):  source venv/bin/activate
+
+SECRET KEY : cba247bb-2d11-4bd9-9868-405d8ec4eb3f
