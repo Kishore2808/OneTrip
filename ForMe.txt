@@ -3,3 +3,19 @@ ACTIVATE V ENV (WINDOWS):  .\venv\Scripts\Activate.ps1
 ACTIVATE V ENV (MAC):  source venv/bin/activate
 
 SECRET KEY : cba247bb-2d11-4bd9-9868-405d8ec4eb3f
+
+START SERVER : uvicorn app.main:app --reload
+
+NEW FILE : W - New-Item app/api/deps.py -ItemType File
+           M - touch app/api/deps.py
+
+GOOGLE API KEY : AIzaSyD21nh-HNT3BPNsfMY4neGib3U-eOYeDlg
+
+FS API KEY : WSCTEINFPBK0STHUQUK5XLXEVHMODVWI0BBUAPU0VPGW5FWJ
+
+LOG IN : curl -X POST http://127.0.0.1:8000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+        "email": "test@email.com",
+        "password": "MyPass123"
+      }'

@@ -320,4 +320,6 @@ Build pages:
 ✅ API design with all endpoints
 ✅ A roadmap on how **you** specifically can build this as a solo Python dev
 
-Just tell me what you want next — I can go as detailed as you need.
+ADD:
+
+If you later want to store opening hours or photos, we can add columns and run an Alembic migration.

@@ -1,0 +1,91 @@
+# import requests
+# import os
+
+# GOOGLE_KEY = "AIzaSyD21nh-HNT3BPNsfMY4neGib3U-eOYeDlg"
+
+# def google_places_search(query, location=None, radius=5000):
+#     url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+#     params = {
+#         "key": GOOGLE_KEY,
+#         "query": query,
+#     }
+#     if location:
+#         params["location"] = f"{location[0]},{location[1]}"
+#         params["radius"] = radius
+#     resp = requests.get(url, params=params)
+#     return resp.json()
+
+# if __name__ == "__main__":
+#     city = "Chennai, India"
+#     tests = [
+#         "restaurants in Chennai",
+#         "shopping malls in Chennai",
+#         "tourist attractions in Chennai",
+#         "heritage monuments in Chennai"
+#     ]
+#     for q in tests:
+#         data = google_places_search(q)
+#         print("Query:", q)
+#         print("Number of results:", len(data.get("results", [])))
+#         for p in data.get("results", []):
+#             print("  -", p.get("name"), "| address:", p.get("formatted_address"))
+#         print("---")
+
+
+
+# import os
+# import requests
+
+# FSQ_KEY = "WUUJBCLEYON4RHOB52VPJF33YMP3LTYU5CTQHVYMYQY4I5OS" 
+
+# def search_fsq(query, lat, lon, limit=20):
+#     # NEW 2025 Endpoint
+#     url = "https://places-api.foursquare.com/places/search"
+
+#     headers = {
+#         "Accept": "application/json",
+
+#         # NEW 2025 Authentication Format
+#         "Authorization": f"Bearer {FSQ_KEY}",
+
+#         # NEW Required version header (must match migration guide)
+#         "X-Places-Api-Version": "2025-06-17",
+#     }
+
+#     params = {
+#         "query": query,
+#         "ll": f"{lat},{lon}",
+#         "radius": 5000,
+#         "limit": limit
+#     }
+
+#     resp = requests.get(url, headers=headers, params=params)
+#     # print("RAW RESPONSE:", resp.status_code, resp.text)
+
+#     if resp.status_code != 200:
+#         return {"results": []}
+
+#     return resp.json()
+
+
+# if __name__ == "__main__":
+#     lat, lon = 13.0827, 80.2707
+
+#     queries = [
+#         "restaurant",
+#         "cafe",
+#         "mall",
+#         "clothing store",
+#         "tourist attraction",
+#         "temple"
+#     ]
+
+#     for q in queries:
+#         print(f"\n🔍 Query: {q}")
+#         data = search_fsq(q, lat, lon)
+#         items = data.get("results", [])
+
+#         print("Count:", len(items))
+#         for p in items[:10]:
+#             print(" •", p.get("name"), "|", p.get("location", {}).get("formatted_address"))
+
